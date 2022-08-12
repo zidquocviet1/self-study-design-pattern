@@ -1,11 +1,12 @@
 package com.mqv.behavior.commandpattern.receiver;
 
-import com.mqv.behavior.commandpattern.client.Request;
+import com.mqv.behavior.commandpattern.model.Request;
+import com.mqv.behavior.commandpattern.repository.Repository;
 
-public class AuraSwitch3 extends BaseAuraSwitch {
+public class AuraSwitch3Receiver extends BaseAuraSwitchReceiver {
     private final String deviceId;
 
-    public AuraSwitch3(Repository repository, String deviceId) {
+    public AuraSwitch3Receiver(Repository repository, String deviceId) {
         super(repository);
         this.deviceId = deviceId;
     }
@@ -23,6 +24,12 @@ public class AuraSwitch3 extends BaseAuraSwitch {
 
     @Override
     public void sendOffCommand(String key) {
-        System.out.println("Request change status of Aura Switch 3 to off at key: " + key);
+        System.out.println("Request change status of Aura Switch 3 to Off at key: " + key);
+
+        String topic = "devices/" + deviceId + "/requests";
+        int turnOnData = 0;
+        Request request = new Request(topic, key, turnOnData);
+
+        repository.sendRequest(request);
     }
 }

@@ -2,12 +2,25 @@ package com.mqv.behavior.commandpattern.invoker;
 
 import com.mqv.behavior.commandpattern.command.BaseCommand;
 
-public record FallDetection(BaseCommand configCommand, BaseCommand controlCommand) {
-    public void sendConfig() {
-        configCommand.execute();
+import java.util.Objects;
+
+public final class FallDetection {
+    private final BaseCommand configCommand;
+    private final BaseCommand controlCommand;
+
+    public FallDetection(BaseCommand configCommand, BaseCommand controlCommand) {
+        Objects.requireNonNull(configCommand);
+        Objects.requireNonNull(controlCommand);
+
+        this.configCommand = configCommand;
+        this.controlCommand = controlCommand;
     }
 
-    public void sendControl() {
-        controlCommand.execute();
+    public void sendConfig(String key) {
+        configCommand.execute(key);
+    }
+
+    public void sendControl(String key) {
+        controlCommand.execute(key);
     }
 }

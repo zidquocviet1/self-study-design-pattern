@@ -1,4 +1,4 @@
-package com.mqv.behavior.commandpattern.client;
+package com.mqv.behavior.commandpattern.model;
 
 public record Request(String topic, String key, int data) {
     @Override
