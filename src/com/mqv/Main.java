@@ -33,7 +33,7 @@ public class Main {
         // Create Aura invoker
         PayloadCommand fallConfigCommand = new FallConfigCommand(auraFallDetection);
         PayloadCommand fallControlCommand = new FallControlCommand(auraFallDetection);
-        FallDetection mFallDetection = new FallDetection(fallConfigCommand, fallControlCommand  );
+        FallDetection mFallDetection = new FallDetection(fallConfigCommand, fallControlCommand);
 
         // Create Aura Handler
         AuraHandler handler = new AuraHandler(mSwitch, mFallDetection);
