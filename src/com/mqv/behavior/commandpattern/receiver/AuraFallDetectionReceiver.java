@@ -4,11 +4,8 @@ import com.mqv.behavior.commandpattern.model.Request;
 import com.mqv.behavior.commandpattern.repository.Repository;
 
 public class AuraFallDetectionReceiver extends BaseAuraReceiver {
-    private final String deviceId;
-
     public AuraFallDetectionReceiver(Repository repository, String deviceId) {
-        super(repository);
-        this.deviceId = deviceId;
+        super(repository, deviceId);
     }
 
     public void sendConfig(String key) {

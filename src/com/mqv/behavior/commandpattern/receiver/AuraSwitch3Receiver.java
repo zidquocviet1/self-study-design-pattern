@@ -4,11 +4,8 @@ import com.mqv.behavior.commandpattern.model.Request;
 import com.mqv.behavior.commandpattern.repository.Repository;
 
 public class AuraSwitch3Receiver extends BaseAuraSwitchReceiver {
-    private final String deviceId;
-
     public AuraSwitch3Receiver(Repository repository, String deviceId) {
-        super(repository);
-        this.deviceId = deviceId;
+        super(repository, deviceId);
     }
 
     @Override
