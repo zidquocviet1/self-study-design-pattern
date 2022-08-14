@@ -26,13 +26,13 @@ public class Main {
         AuraFallDetectionReceiver auraFallDetection = new AuraFallDetectionReceiver(repository, auraFallDetectionId);
 
         // Create Switch invoker
-        BaseCommand openSwitchCommand = new OpenSwitchCommand(auraSwitch3);
-        BaseCommand offSwitchCommand = new OffSwitchCommand(auraSwitch3);
+        PayloadCommand openSwitchCommand = new OpenSwitchCommand(auraSwitch3);
+        PayloadCommand offSwitchCommand = new OffSwitchCommand(auraSwitch3);
         Switch mSwitch = new Switch(openSwitchCommand, offSwitchCommand);
 
         // Create Aura invoker
-        BaseCommand fallConfigCommand = new FallConfigCommand(auraFallDetection);
-        BaseCommand fallControlCommand = new FallControlCommand(auraFallDetection);
+        PayloadCommand fallConfigCommand = new FallConfigCommand(auraFallDetection);
+        PayloadCommand fallControlCommand = new FallControlCommand(auraFallDetection);
         FallDetection mFallDetection = new FallDetection(fallConfigCommand, fallControlCommand  );
 
         // Create Aura Handler

@@ -1,14 +1,14 @@
 package com.mqv.behavior.commandpattern.invoker;
 
-import com.mqv.behavior.commandpattern.command.BaseCommand;
+import com.mqv.behavior.commandpattern.command.PayloadCommand;
 
 import java.util.Objects;
 
 public final class Switch {
-    private final BaseCommand onCommand;
-    private final BaseCommand offCommand;
+    private final PayloadCommand onCommand;
+    private final PayloadCommand offCommand;
 
-    public Switch(BaseCommand onCommand, BaseCommand offCommand) {
+    public Switch(PayloadCommand onCommand, PayloadCommand offCommand) {
         Objects.requireNonNull(onCommand);
         Objects.requireNonNull(offCommand);
 

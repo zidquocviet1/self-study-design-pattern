@@ -1,14 +1,14 @@
 package com.mqv.behavior.commandpattern.invoker;
 
-import com.mqv.behavior.commandpattern.command.BaseCommand;
+import com.mqv.behavior.commandpattern.command.PayloadCommand;
 
 import java.util.Objects;
 
 public final class FallDetection {
-    private final BaseCommand configCommand;
-    private final BaseCommand controlCommand;
+    private final PayloadCommand configCommand;
+    private final PayloadCommand controlCommand;
 
-    public FallDetection(BaseCommand configCommand, BaseCommand controlCommand) {
+    public FallDetection(PayloadCommand configCommand, PayloadCommand controlCommand) {
         Objects.requireNonNull(configCommand);
         Objects.requireNonNull(controlCommand);
 
