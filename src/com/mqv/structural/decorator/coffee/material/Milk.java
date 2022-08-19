@@ -10,15 +10,8 @@ public abstract class Milk extends Material {
         this.name = name;
     }
 
-    protected abstract double milkCost();
-
     @Override
     public String getDescription() {
         return beverage.getDescription() + " with " + name;
-    }
-
-    @Override
-    public double cost() {
-        return beverage.cost() + milkCost();
     }
 }

@@ -8,7 +8,7 @@ public class CondensedMilk extends Milk {
     }
 
     @Override
-    protected double milkCost() {
-        return 20;
+    public double cost() {
+        return beverage.cost() + 20;
     }
 }
