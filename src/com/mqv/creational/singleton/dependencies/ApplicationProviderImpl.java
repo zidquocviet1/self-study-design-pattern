@@ -1,8 +1,5 @@
-package com.mqv.creational.singleton;
+package com.mqv.creational.singleton.dependencies;
 
-import com.mqv.creational.singleton.dependencies.RestClient;
-import com.mqv.creational.singleton.dependencies.WebRtcManager;
-import com.mqv.creational.singleton.dependencies.WebSocketClient;
 import com.mqv.creational.singleton.factory.WebSocketFactory;
 import com.mqv.creational.singleton.listener.WebSocketEventListener;
 import com.mqv.creational.singleton.model.WebSocketConnection;

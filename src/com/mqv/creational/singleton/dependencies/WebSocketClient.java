@@ -3,13 +3,13 @@ package com.mqv.creational.singleton.dependencies;
 import com.mqv.creational.singleton.factory.WebSocketFactory;
 import com.mqv.creational.singleton.model.WebSocketConnection;
 
-public class WebSocketClient {
+public final class WebSocketClient {
     private final WebSocketFactory factory;
 
     private WebSocketConnection webSocket;
     private WebSocketConnection presenceWebSocket;
 
-    public WebSocketClient(WebSocketFactory factory) {
+    WebSocketClient(WebSocketFactory factory) {
         this.factory = factory;
     }
 

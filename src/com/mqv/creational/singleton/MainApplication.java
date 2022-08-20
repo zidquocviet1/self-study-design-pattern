@@ -1,5 +1,8 @@
 package com.mqv.creational.singleton;
 
+import com.mqv.creational.singleton.dependencies.ApplicationDependency;
+import com.mqv.creational.singleton.dependencies.ApplicationProvider;
+import com.mqv.creational.singleton.dependencies.ApplicationProviderImpl;
 import com.mqv.creational.singleton.listener.WebSocketEventListener;
 import com.mqv.creational.singleton.model.IceCandidate;
 

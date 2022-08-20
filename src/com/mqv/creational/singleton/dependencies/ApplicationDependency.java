@@ -1,8 +1,4 @@
-package com.mqv.creational.singleton;
-
-import com.mqv.creational.singleton.dependencies.RestClient;
-import com.mqv.creational.singleton.dependencies.WebRtcManager;
-import com.mqv.creational.singleton.dependencies.WebSocketClient;
+package com.mqv.creational.singleton.dependencies;
 
 public final class ApplicationDependency {
     private static final Object LOCK = new Object();
