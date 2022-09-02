@@ -1,7 +1,10 @@
 package com.mqv.behavior.strategy;
 
+import com.mqv.behavior.strategy.client.InPersonOrder;
+import com.mqv.behavior.strategy.client.OnlineOrder;
 import com.mqv.behavior.strategy.client.Order;
 import com.mqv.behavior.strategy.client.Product;
+import com.mqv.behavior.strategy.concrete.CashPayment;
 import com.mqv.behavior.strategy.concrete.CreditCardStrategy;
 import com.mqv.behavior.strategy.concrete.MomoStrategy;
 import com.mqv.behavior.strategy.concrete.PaypalStrategy;
@@ -13,7 +16,9 @@ public class StrategyExample {
         int validCardNumber = 123;
         int validCvv = 333;
 
-        Order order = new Order();
+        Order order = new InPersonOrder();
+        Order onlineOrder = new OnlineOrder();
+
         List<Product> productList = List.of(
                 new Product("Nike Air Force 1", 50000),
                 new Product("Adidas Yeezy 350", 12400),
@@ -23,17 +28,21 @@ public class StrategyExample {
         );
 
         order.setProductList(productList);
+        onlineOrder.setProductList(productList);
 
         // Pay by momo
-        order.setPaymentStrategy(new MomoStrategy());
-        order.pay();
+        onlineOrder.setPaymentStrategy(new MomoStrategy());
+        onlineOrder.pay();
 
         // Pay by Credit Card
-        order.setPaymentStrategy(new CreditCardStrategy(validCardNumber, validCvv));
-        order.pay();
+        onlineOrder.setPaymentStrategy(new CreditCardStrategy(validCardNumber, validCvv));
+        onlineOrder.pay();
 
         // Pay by Paypal
-        order.setPaymentStrategy(new PaypalStrategy());
+        onlineOrder.setPaymentStrategy(new PaypalStrategy());
+        onlineOrder.pay();
+
+        order.setPaymentStrategy(new CashPayment());
         order.pay();
     }
 }
