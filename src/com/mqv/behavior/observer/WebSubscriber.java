@@ -6,6 +6,11 @@ package com.mqv.behavior.observer;
 public class WebSubscriber implements Subscriber<Stock> {
     @Override
     public void onChanged(Stock data) {
-        System.out.println("Received new stock data from web client");
+        System.out.println("Received new stock data from web client: " + data.name());
+    }
+
+    @Override
+    public String getName() {
+        return "Microsoft Edge";
     }
 }

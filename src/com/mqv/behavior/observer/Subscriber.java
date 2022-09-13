@@ -5,4 +5,5 @@ package com.mqv.behavior.observer;
  */
 public interface Subscriber<T> {
     void onChanged(T data);
+    String getName();
 }

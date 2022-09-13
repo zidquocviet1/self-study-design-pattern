@@ -15,11 +15,13 @@ public class StockDashBoard implements Publisher<Stock> {
 
     @Override
     public void registerObserver(Subscriber<Stock> subscriber) {
+        System.out.println("New observer added: " + subscriber.getName());
         stockSubscribers.add(subscriber);
     }
 
     @Override
     public void unregisterObserver(Subscriber<Stock> subscriber) {
+        System.out.println("Remove observer: " + subscriber.getName());
         stockSubscribers.remove(subscriber);
     }
 

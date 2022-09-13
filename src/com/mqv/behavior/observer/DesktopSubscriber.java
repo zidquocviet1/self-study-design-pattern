@@ -6,6 +6,11 @@ package com.mqv.behavior.observer;
 public class DesktopSubscriber implements Subscriber<Stock> {
     @Override
     public void onChanged(Stock data) {
-        System.out.println("Received new stock data from desktop client");
+        System.out.println("Received new stock data from desktop client with stock: " + data.name());
+    }
+
+    @Override
+    public String getName() {
+        return "MacOS";
     }
 }
