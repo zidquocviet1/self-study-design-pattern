@@ -62,18 +62,8 @@ public class CarStateBuilder {
             return this;
         }
 
-        public EngineDataBuilder type(EngineData.EngineType type) {
-            this.engineData.setType(type);
-            return this;
-        }
-
         public EngineDataBuilder fuel(int currentFuel) {
             this.engineData.setFuel(currentFuel);
-            return this;
-        }
-
-        public EngineDataBuilder fuelType(EngineData.FuelType fuelType) {
-            this.engineData.setFuelType(fuelType);
             return this;
         }
 
@@ -88,8 +78,7 @@ public class CarStateBuilder {
         }
 
         public CarState build() {
-            commit();
-            return CarStateBuilder.this.toBuild;
+            return commit().toBuild;
         }
     }
 
@@ -110,19 +99,13 @@ public class CarStateBuilder {
             return this;
         }
 
-        public WindowDataBuilder direction(WindowData.Direction direction) {
-            this.windowData.setDirection(direction);
-            return this;
-        }
-
         public CarStateBuilder commit() {
             CarStateBuilder.this.toBuild.setWindowData(this.windowData);
             return CarStateBuilder.this;
         }
 
         public CarState build() {
-            commit();
-            return CarStateBuilder.this.toBuild;
+            return commit().toBuild;
         }
     }
 
@@ -143,19 +126,13 @@ public class CarStateBuilder {
             return this;
         }
 
-        public WheelDataBuilder type(WheelData.WheelType type) {
-            this.wheelData.setType(type);
-            return this;
-        }
-
         public CarStateBuilder commit() {
             CarStateBuilder.this.toBuild.setWheelData(this.wheelData);
             return CarStateBuilder.this;
         }
 
         public CarState build() {
-            commit();
-            return CarStateBuilder.this.toBuild;
+            return commit().toBuild;
         }
     }
 }
